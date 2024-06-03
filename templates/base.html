@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Expense Sharing App{% endblock %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #c5e4ee;
+            background-size: cover;
+        }
+        .sidebar {
+            height: 100%;
+            position: fixed;
+            width: 250px;
+            background-color: rgb(242, 241, 245);
+            padding-top: 20px;
+        }
+        .sidebar h2 {
+            padding: 0px 0px 15px 78px;
+            border-bottom: 2px solid #333;
+            border-radius: 15px;
+        }
+        .sidebar .btn {
+            width: 90%;
+            margin: 10px auto;
+            display: block;
+            border-radius: 20px;
+            color: #fff;
+            background-color: slateblue;
+            border-color: plum;
+            text-align: left;
+        }
+        .content {
+            margin-left: 270px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Menu</h2>
+        <a class="btn btn-primary" href="{{ url_for('index') }}">Home</a>
+        <a class="btn btn-primary" href="{{ url_for('add_expense') }}">Add Expense</a>
+        <a class="btn btn-primary" href="{{ url_for('view_expenses') }}">View Expenses</a>
+        <a class="btn btn-primary" href="{{ url_for('view_balances') }}">View Balances</a>
+        <a class="btn btn-primary" href="{{ url_for('add_friend') }}">Add Friend</a>
+        <a class="btn btn-primary" href="{{ url_for('logout') }}">Logout</a>
+    </div>
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

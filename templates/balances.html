@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}View Balances{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="mt-5 text-center" style="color: black; font-family: century gothic;">View Balances</h1>
+    <table class="table table-striped mt-3" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+        <thead class="thead-light" >
+            <tr>
+                <th scope="col" style="background-color: rgba(128, 128, 128, 0.438)">Friend</th>
+                <th scope="col" style="background-color: rgba(128, 128, 128, 0.438)">Balance</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for friend, balance in balances.items() %}
+            <tr>
+                <td>{{ friend }}</td>
+                <td>${{ balance }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

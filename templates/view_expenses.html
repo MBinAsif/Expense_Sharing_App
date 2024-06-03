@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}View Expenses{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="mt-5 text-center" style="font-family: Century Gothic; color: black;">View Expenses</h1>
+    <table class="table table-striped mt-3">
+        <thead class="thead-light" style="background-color: lightgreen;">
+            <tr>
+                <th scope="col">Description</th>
+                <th scope="col">Amount</th>
+                <th scope="col">Split Between</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for expense in expenses %}
+            <tr>
+                <td>{{ expense.description }}</td>
+                <td>${{ expense.amount }}</td>
+                <td>{{ expense.split_between }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
